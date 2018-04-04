@@ -1,1 +1,14 @@
-logs.pbs
+#!/bin/bash
+#PBS -l nodes=4:ppn=32:xe
+#PBS -l walltime=24:00:00
+#PBS -N run_job
+#PBS -e $PBS_JOBID.err
+#PBS -o $PBS_JOBID.out
+#PBS -m bea
+#PBS -M borcean2@illinois.edu
+#PBS -A bapr
+#PBS -v UDI=lgerhardt/
+
+
+### For more information see the man page for aprun
+
