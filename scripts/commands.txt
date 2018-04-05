@@ -1,0 +1,56 @@
+qsub -I -l nodes=2:ppn=16,walltime=02:00:00
+aprun -n 2 organize.sh
+
+## DARSHAN DIRECTORY ##
+cd /projects/monitoring_data/darshan/
+
+## Enter all directories within directory ##
+for i in $(ls -d */); do cd $i; ls ;cd ..; done
+
+## Copy and untar to local directory ##
+## Unzip all ##
+gunzip -r Darshan_logs/
+
+## Find all directories with index files ##
+find . -name '*.index' > ../dir_with_index
+
+## Unpack all tar.gz ##
+for i in $(ls -d */); do cd $i; find . -name '*.tar.gz' -exec tar -xzvf {} \; ;cd ..; done
+
+
+## Find # of dir ##
+find . -maxdepth 1 -type d |wc -l
+
+## Split # of dir ##
+ls -1 -d */ | split --lines=1
+
+## Find # of files in dir ##
+ls *.darshan.gz | wc -l
+
+
+## If Darshan version incompatible ##
+module unload darshan
+module load darshan/<version>
+
+## Get all files not compatabile with version 3 darshan/<loaded"3"version> ##
+find -name "*.darshan.gz" -print -exec darshan-parser {} \; 2>/dev/null
+
+## Wait for .err job ##
+until [ ! -f *.err ] && [ -s *.err ] ; do qsub logs.pbs; sleep 1; done
+
+## Size of Darshan Directory ##
+du -sh Darshan_logs
+
+## Sort by date created ##
+ls -lct
+
+## Look at Darshan Log ##
+darshan-parser <file>
+
+## CLEANUP DARSHAN FILES ##
+tail -n +4 mislam_pingpong_id627241_2-26-56536-2826
+551374314949241_1.darshan
+
+
+## CUT FIELDS ##
+cut -f 1 mislam_pingpong_id627241_2-26-56536-2826551374314949241_1.darshan

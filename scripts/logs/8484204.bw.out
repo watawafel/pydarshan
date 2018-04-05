@@ -1,0 +1,42 @@
+In Torque Shifter prologue batchID: 8484204
+Initializing udiRoot, please wait.
+Retrieving Docker Image
+udiRoot Start successful
+----------------------------------------
+Begin Torque Prologue on nid27565
+at Thu Apr  5 13:18:02 CDT 2018
+Job Id:			8484204.bw
+Username:		borcean2
+Group:			EOT_bapr
+Job name:		test_spark_jupyter
+Requested resources:	gres=shifter16,neednodes=4:ppn=32,nodes=4:ppn=32,walltime=02:00:00
+Queue:			normal
+Account:		bapr
+End Torque Prologue:  34.541 elapsed
+----------------------------------------
+
+
+
+
+Starting Spark Master on nid19220 (URL: http://10.128.75.171:8080)...
+starting org.apache.spark.deploy.master.Master, logging to /u/eot/borcean2/scratch/spark/spark-borcean2-org.apache.spark.deploy.master.Master-1-nid19220.out
+Starting Spark slaves...
+starting org.apache.spark.deploy.worker.Worker, logging to /u/eot/borcean2/scratch/spark/spark-borcean2-org.apache.spark.deploy.worker.Worker-1-nid19274.out
+starting org.apache.spark.deploy.worker.Worker, logging to /u/eot/borcean2/scratch/spark/spark-borcean2-org.apache.spark.deploy.worker.Worker-1-nid19275.out
+udiRoot Cleanup successful
+Output from node nid19274:
+Checking for stray process(es) launched by borcean2 through direct SSH to Shifter container.
+  PID TTY          TIME CMD
+Reply (complete) from nid19274 exit code: 0
+Output from node nid19275:
+Checking for stray process(es) launched by borcean2 through direct SSH to Shifter container.
+  PID TTY          TIME CMD
+Reply (complete) from nid19275 exit code: 0
+Output from node nid19220:
+Checking for stray process(es) launched by borcean2 through direct SSH to Shifter container.
+  PID TTY          TIME CMD
+Reply (complete) from nid19220 exit code: 0
+Output from node nid19221:
+Checking for stray process(es) launched by borcean2 through direct SSH to Shifter container.
+  PID TTY          TIME CMD
+Reply (complete) from nid19221 exit code: 0

@@ -1,0 +1,73 @@
+-------------------------------------------------------------------
+/mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles/spark-2.1.1:
+
+module-whatis	 Spark implementation for Blue Waters via Shifter.  
+setenv		 SPARK_MASTER_HOST nid19220 
+setenv		 SPARK_HOME /usr/local/bin/spark-2.1.1-bin-hadoop2.7 
+setenv		 SPARK_SCRIPTS /mnt/a/u/eot/borcean2/apps/spark/2.1.1/ 
+setenv		 SPARK_CONF_DIR /mnt/a/u/eot/borcean2/apps/spark/2.1.1//conf 
+setenv		 CRAY_ROOTFS SHIFTER 
+prepend-path	 PATH /mnt/a/u/eot/borcean2/apps/spark/2.1.1//bin 
+-------------------------------------------------------------------
+
+[I 18:20:21.844 NotebookApp] Serving notebooks from local directory: /mnt/a/u/eot/borcean2
+[I 18:20:21.845 NotebookApp] 0 active kernels 
+[I 18:20:21.845 NotebookApp] The Jupyter Notebook is running at: http://10.128.75.172:8890/
+[I 18:20:21.845 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 18:23:13.239 NotebookApp] 302 GET / (10.0.0.147) 0.88ms
+[I 18:23:13.247 NotebookApp] 302 GET /tree? (10.0.0.147) 1.37ms
+[I 18:23:15.583 NotebookApp] 302 POST /login?next=%2Ftree%3F (10.0.0.147) 1.58ms
+[W 18:23:20.211 NotebookApp] 404 GET /favicon.ico (10.0.0.147) 15.39ms referer=None
+[W 18:23:20.213 NotebookApp] 404 GET /favicon.ico (10.0.0.147) 1.97ms referer=None
+[W 18:23:22.088 NotebookApp] Notebook apps/pydarshan/notebooks/mine.ipynb is not trusted
+[I 18:23:22.940 NotebookApp] Kernel started: e80816a5-b7f3-4355-95ca-4a39757fdd25
+[IPKernelApp] WARNING | File not found: '/etc/pythonstart'
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+18/04/05 18:24:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/04/05 18:24:36 ERROR SparkContext: Error initializing SparkContext.
+org.apache.spark.SparkException: Could not parse Master URL: '10.128.75.171:8080'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2564)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:501)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:236)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+18/04/05 18:24:36 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+18/04/05 18:24:36 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor).  This may indicate an error, since only one SparkContext may be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+py4j.Gateway.invoke(Gateway.java:236)
+py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+py4j.GatewayConnection.run(GatewayConnection.java:214)
+java.lang.Thread.run(Thread.java:748)
+[I 18:25:23.034 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 18:25:23.038 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+[I 18:41:22.982 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 18:41:22.983 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+[W 18:41:29.029 NotebookApp] Notebook apps/pydarshan/notebooks/mine.ipynb is not trusted
+[I 18:43:30.286 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 18:43:30.287 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+[I 18:49:30.315 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 18:49:30.316 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+aprun: Apid 66120856: Caught signal Terminated, sending to application
+aprun: Apid 66120863: Caught signal Terminated, sending to application
+aprun: Apid 66120862: Caught signal Terminated, sending to application
+[C 18:50:34.151 NotebookApp] received signal 15, stopping
+[I 18:50:34.157 NotebookApp] Shutting down kernels
+[I 18:50:34.157 NotebookApp] Kernel shutdown: e80816a5-b7f3-4355-95ca-4a39757fdd25

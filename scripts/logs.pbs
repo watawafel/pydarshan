@@ -2,7 +2,7 @@
 #PBS -l nodes=4:ppn=32
 #PBS -l gres=shifter16
 #PBS -l walltime=02:00:00
-#PBS -N test_spark_jupyter
+#PBS -N test_spark_bwpy
 #PBS -e $PBS_JOBID.err
 #PBS -o $PBS_JOBID.out
 #PBS -m bea
@@ -17,6 +17,8 @@ module use /mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles
 
 module load spark-2.1.1
 module show spark-2.1.1
+module load bwpy
+module show bwpy
 
 alps-start-master.sh
 sleep 120

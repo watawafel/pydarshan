@@ -1,0 +1,63 @@
+-------------------------------------------------------------------
+/mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles/spark-2.1.1:
+
+module-whatis	 Spark implementation for Blue Waters via Shifter.  
+setenv		 SPARK_MASTER_HOST nid05472 
+setenv		 SPARK_HOME /usr/local/bin/spark-2.1.1-bin-hadoop2.7 
+setenv		 SPARK_SCRIPTS /mnt/a/u/eot/borcean2/apps/spark/2.1.1/ 
+setenv		 SPARK_CONF_DIR /mnt/a/u/eot/borcean2/apps/spark/2.1.1//conf 
+setenv		 CRAY_ROOTFS SHIFTER 
+prepend-path	 PATH /mnt/a/u/eot/borcean2/apps/spark/2.1.1//bin 
+-------------------------------------------------------------------
+
+[I 19:32:41.015 NotebookApp] Serving notebooks from local directory: /mnt/a/u/eot/borcean2
+[I 19:32:41.015 NotebookApp] 0 active kernels 
+[I 19:32:41.015 NotebookApp] The Jupyter Notebook is running at: http://10.128.21.140:8890/
+[I 19:32:41.015 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 19:36:55.503 NotebookApp] 302 GET / (10.0.0.147) 0.86ms
+[I 19:36:55.510 NotebookApp] 302 GET /tree? (10.0.0.147) 1.44ms
+[I 19:36:58.940 NotebookApp] 302 POST /login?next=%2Ftree%3F (10.0.0.147) 1.64ms
+[W 19:37:08.147 NotebookApp] 404 GET /favicon.ico (10.0.0.147) 15.25ms referer=None
+[W 19:37:14.768 NotebookApp] Notebook apps/pydarshan/notebooks/mine.ipynb is not trusted
+[I 19:37:15.801 NotebookApp] Kernel started: 99011eea-a1d1-4431-8fca-ae72311f99ce
+[IPKernelApp] WARNING | File not found: '/etc/pythonstart'
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+18/04/05 19:38:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                         (0 + 0) / 64][Stage 0:>                                                        (0 + 64) / 64]18/04/05 19:38:17 WARN TaskSetManager: Lost task 42.0 in stage 0.0 (TID 42, 10.128.21.234, executor 1): org.apache.spark.SparkException: 
+Error from python worker:
+  Error: Not a root suid binary! (When launched via aprun, `aprun -b` must be used)
+PYTHONPATH was:
+  /usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip:/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/py4j-0.10.4-src.zip:/usr/local/bin/spark-2.1.1-bin-hadoop2.7/jars/spark-core_2.11-2.1.1.jar:/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/py4j-0.10.4-src.zip:/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python:/python/:/opt/xalt/0.7.6/sles11.3/libexec:/opt/cray/sdb/1.1-1.0502.63652.4.27.gem/lib64/py
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.spark.api.python.PythonWorkerFactory.startDaemon(PythonWorkerFactory.scala:166)
+	at org.apache.spark.api.python.PythonWorkerFactory.createThroughDaemon(PythonWorkerFactory.scala:89)
+	at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:65)
+	at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:116)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:128)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:322)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+
+[Stage 0:>                                                        (0 + 63) / 64][Stage 0:>                                                        (0 + 64) / 64]18/04/05 19:38:20 ERROR TaskSetManager: Task 25 in stage 0.0 failed 4 times; aborting job
+[I 19:39:15.712 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 19:39:15.715 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+[I 19:41:15.720 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 19:41:15.721 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+aprun: Apid 66137519: Caught signal Terminated, sending to application
+aprun: Apid 66137518: Caught signal Terminated, sending to application
+aprun: Apid 66137514: Caught signal Terminated, sending to application
+[C 19:42:11.304 NotebookApp] received signal 15, stopping
+[C 19:42:11.303 NotebookApp] received signal 15, stopping
+[C 19:42:11.305 NotebookApp] received signal 15, stopping
+[I 19:42:11.319 NotebookApp] Shutting down kernels
+18/04/05 19:42:11 WARN StandaloneAppClient$ClientEndpoint: Connection to nid05472:7077 failed; waiting for master to reconnect...
+18/04/05 19:42:11 WARN StandaloneSchedulerBackend: Disconnected from Spark cluster! Waiting for reconnection...
