@@ -2,7 +2,7 @@
 #PBS -l nodes=4:ppn=32
 #PBS -l gres=shifter16
 #PBS -l walltime=02:00:00
-#PBS -N run_job
+#PBS -N test_spark_jupyter
 #PBS -e $PBS_JOBID.err
 #PBS -o $PBS_JOBID.out
 #PBS -m bea
@@ -22,4 +22,4 @@ alps-start-master.sh
 sleep 120
 alps-start-slaves.sh
 
-aprun --shifter jupyter-notebook 
+aprun -b -- /root/anaconda3/bin/jupyter-notebook 
