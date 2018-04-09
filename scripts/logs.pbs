@@ -2,7 +2,7 @@
 #PBS -l nodes=4:ppn=32
 #PBS -l gres=shifter16
 #PBS -l walltime=02:00:00
-#PBS -N test_spark_bwpy
+#PBS -N spark_jup
 #PBS -e $PBS_JOBID.err
 #PBS -o $PBS_JOBID.out
 #PBS -m bea
@@ -17,11 +17,16 @@ module use /mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles
 
 module load spark-2.1.1
 module show spark-2.1.1
+module unload bwpy
 
+export PATH=/root/anaconda3/bin:$PATH
+export PYTHONPATH=/root/anaconda3/bin:$PYTHONPATH
 
 alps-start-master.sh
-sleep 120
+sleep 60
 alps-start-slaves.sh
 
 
-aprun -b -- /root/anaconda3/bin/jupyter-notebook 
+aprun -b -- /root/anaconda3/bin/jupyter-notebook
+#export PYTHONPATH=/root/anaconda3/bin:$PYTHONPATH
+#aprun jupyter-notebook 

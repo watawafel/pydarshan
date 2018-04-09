@@ -1,0 +1,53 @@
+-------------------------------------------------------------------
+/mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles/spark-2.1.1:
+
+module-whatis	 Spark implementation for Blue Waters via Shifter.  
+setenv		 SPARK_MASTER_HOST nid08712 
+setenv		 SPARK_HOME /usr/local/bin/spark-2.1.1-bin-hadoop2.7 
+setenv		 SPARK_SCRIPTS /mnt/a/u/eot/borcean2/apps/spark/2.1.1/ 
+setenv		 SPARK_CONF_DIR /mnt/a/u/eot/borcean2/apps/spark/2.1.1//conf 
+setenv		 CRAY_ROOTFS SHIFTER 
+prepend-path	 PATH /mnt/a/u/eot/borcean2/apps/spark/2.1.1//bin 
+-------------------------------------------------------------------
+
+[I 21:11:49.318 NotebookApp] Serving notebooks from local directory: /mnt/a/u/eot/borcean2
+[I 21:11:49.319 NotebookApp] 0 active kernels 
+[I 21:11:49.319 NotebookApp] The Jupyter Notebook is running at: http://10.128.34.28:8890/
+[I 21:11:49.319 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 22:24:18.570 NotebookApp] 302 GET / (10.0.0.147) 0.87ms
+[W 22:24:25.374 NotebookApp] Notebook apps/pydarshan/notebooks/mine.ipynb is not trusted
+[I 22:24:26.314 NotebookApp] Kernel started: 49529c4e-dd2f-41d5-9610-5b8e5aef4871
+[IPKernelApp] WARNING | File not found: '/etc/pythonstart'
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+18/04/09 22:25:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 0) / 2][Stage 0:>                                                          (0 + 2) / 2]18/04/09 22:25:45 WARN TaskSetManager: Lost task 1.0 in stage 0.0 (TID 1, 10.128.34.78, executor 1): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/worker.py", line 163, in main
+    func, profiler, deserializer, serializer = read_command(pickleSer, infile)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/worker.py", line 54, in read_command
+    command = serializer._read_with_length(file)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/serializers.py", line 169, in _read_with_length
+    return self.loads(obj)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/serializers.py", line 451, in loads
+    return pickle.loads(obj, encoding=encoding)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/cloudpickle.py", line 783, in _make_skel_func
+    closure = _reconstruct_closure(closures) if closures else None
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/cloudpickle.py", line 775, in _reconstruct_closure
+    return tuple([_make_cell(v) for v in values])
+TypeError: 'int' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:322)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+
+[Stage 0:>                                                          (0 + 0) / 2]18/04/09 22:25:45 ERROR TaskSetManager: Task 0 in stage 0.0 failed 4 times; aborting job
