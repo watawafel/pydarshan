@@ -1,0 +1,68 @@
+-------------------------------------------------------------------
+/mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles/spark-2.1.1:
+
+module-whatis	 Spark implementation for Blue Waters via Shifter.  
+setenv		 SPARK_MASTER_HOST nid09020 
+setenv		 SPARK_HOME /usr/local/bin/spark-2.1.1-bin-hadoop2.7 
+setenv		 SPARK_SCRIPTS /mnt/a/u/eot/borcean2/apps/spark/2.1.1/ 
+setenv		 SPARK_CONF_DIR /mnt/a/u/eot/borcean2/apps/spark/2.1.1//conf 
+setenv		 CRAY_ROOTFS SHIFTER 
+prepend-path	 PATH /mnt/a/u/eot/borcean2/apps/spark/2.1.1//bin 
+-------------------------------------------------------------------
+
+[I 13:44:49.586 NotebookApp] Serving notebooks from local directory: /mnt/a/u/eot/borcean2
+[I 13:44:49.587 NotebookApp] 0 active kernels 
+[I 13:44:49.587 NotebookApp] The Jupyter Notebook is running at: http://10.128.35.42:8890/
+[I 13:44:49.587 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 13:47:52.722 NotebookApp] 302 GET / (10.0.0.147) 0.86ms
+[W 13:47:59.794 NotebookApp] Notebook apps/pydarshan/notebooks/mine.ipynb is not trusted
+[I 13:48:00.771 NotebookApp] Kernel started: 9b7a7ba9-ef09-4072-827f-c6d1a53275ac
+[IPKernelApp] WARNING | File not found: '/etc/pythonstart'
+[W 13:48:19.919 NotebookApp] Notebook apps/pydarshan/notebooks/tokio2_example.ipynb is not trusted
+[I 13:48:20.735 NotebookApp] Kernel started: ed759c64-a634-4edf-8527-636574b43bc2
+[IPKernelApp] WARNING | File not found: '/etc/pythonstart'
+[I 13:50:00.834 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 13:50:00.835 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+[I 13:52:00.808 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 13:52:00.809 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+18/04/10 13:52:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                         (0 + 0) / 64][Stage 0:>                                                        (0 + 64) / 64]18/04/10 13:53:07 WARN TaskSetManager: Lost task 24.0 in stage 0.0 (TID 24, 10.128.35.41, executor 1): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/worker.py", line 163, in main
+    func, profiler, deserializer, serializer = read_command(pickleSer, infile)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/worker.py", line 54, in read_command
+    command = serializer._read_with_length(file)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/serializers.py", line 169, in _read_with_length
+    return self.loads(obj)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/serializers.py", line 451, in loads
+    return pickle.loads(obj, encoding=encoding)
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/cloudpickle.py", line 783, in _make_skel_func
+    closure = _reconstruct_closure(closures) if closures else None
+  File "/usr/local/bin/spark-2.1.1-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/cloudpickle.py", line 775, in _reconstruct_closure
+    return tuple([_make_cell(v) for v in values])
+TypeError: 'int' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:322)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+
+[Stage 0:>                                                        (0 + 39) / 64][Stage 0:>                                                        (0 + 64) / 64][Stage 0:>                                                        (0 + 63) / 64][Stage 0:>                                                        (0 + 47) / 64]18/04/10 13:53:08 ERROR TaskSetManager: Task 30 in stage 0.0 failed 4 times; aborting job
+[I 13:54:00.765 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 13:54:00.767 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+[I 13:54:20.785 NotebookApp] Saving file at /apps/pydarshan/notebooks/tokio2_example.ipynb
+[W 13:54:20.786 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/tokio2_example.ipynb
+[I 14:26:00.856 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 14:26:00.858 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb
+[I 14:26:07.165 NotebookApp] Saving file at /apps/pydarshan/notebooks/mine.ipynb
+[W 14:26:07.166 NotebookApp] Saving untrusted notebook apps/pydarshan/notebooks/mine.ipynb

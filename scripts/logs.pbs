@@ -25,8 +25,10 @@ export PYTHONPATH=/root/anaconda3/bin:$PYTHONPATH
 alps-start-master.sh
 sleep 60
 alps-start-slaves.sh
-
+cat /u/eot/borcean2/apps/pydarshan/scripts/*.bw.OU | grep "Starting Spark Master" | grep -o -P '(?<=http://).*(?=:8080...)' > /u/eot/borcean2/apps/pydarshan/scripts/conf/master
 
 aprun -b -- /root/anaconda3/bin/jupyter-notebook
+
+
 #export PYTHONPATH=/root/anaconda3/bin:$PYTHONPATH
 #aprun jupyter-notebook 

@@ -1,0 +1,25 @@
+In Torque Shifter prologue batchID: 8496244
+Initializing udiRoot, please wait.
+Retrieving Docker Image
+udiRoot Start successful
+----------------------------------------
+Begin Torque Prologue on nid25255
+at Tue Apr 10 08:43:32 CDT 2018
+Job Id:			8496244.bw
+Username:		borcean2
+Group:			EOT_bapr
+Job name:		spark_jup
+Requested resources:	gres=shifter16,neednodes=4:ppn=32,nodes=4:ppn=32,walltime=02:00:00
+Queue:			normal
+Account:		bapr
+End Torque Prologue:  19.566 elapsed
+----------------------------------------
+
+
+
+
+Starting Spark Master on nid09020 (URL: http://10.128.35.131:8080)...
+starting org.apache.spark.deploy.master.Master, logging to /u/eot/borcean2/scratch/spark/spark-borcean2-org.apache.spark.deploy.master.Master-1-nid09020.out
+Starting Spark slaves...
+starting org.apache.spark.deploy.worker.Worker, logging to /u/eot/borcean2/scratch/spark/spark-borcean2-org.apache.spark.deploy.worker.Worker-1-nid09021.out
+starting org.apache.spark.deploy.worker.Worker, logging to /u/eot/borcean2/scratch/spark/spark-borcean2-org.apache.spark.deploy.worker.Worker-1-nid08930.out
