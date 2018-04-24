@@ -1,12 +1,13 @@
 This is a Spark / pyDarshan implementation for Blue Waters
 
 Relevant Links:
+
   Spark Setup : https://github.com/watawafel/pydarshan/blob/master/BWDOC-SparkClustersetup-150218-1307-4152%20(1).pdf
   Link to Download pyDarshan tool : https://xgitlab.cels.anl.gov/darshan/darshan/tree/autoperf-mod/darshan-util
  
-Steps
+Steps:
 
-1. Follow Spark Setup pdf
-2. Download pyDarshan
-3. Submit logs.pbs
+  1. Follow Spark Setup pdf
+  2. Download pyDarshan
+  3. Submit logs.pbs
 
