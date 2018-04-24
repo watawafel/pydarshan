@@ -1,1 +1,10 @@
 This is a Spark / pyDarshan implementation for Blue Waters
+
+Relevant Links:
+  Link to Download pyDarshan tool : https://xgitlab.cels.anl.gov/darshan/darshan/tree/autoperf-mod/darshan-util
+  
+Steps
+
+1. Follow spark setup pdf. 
+2. Download pyDarshan
+3. Submit logs.pbs
