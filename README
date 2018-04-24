@@ -13,6 +13,8 @@ Steps:
 
 
 When submitting job script - Spark will allocate two nodes from resource. One for scheduler node and one for jupyter.
+
 JOBID.ER / JOBID.OU will be created. "cat" files and identify ip for local jupyter compute node. 
+
 To run Jupyter Notebook - Port forward compute node to localhost: ssh -L 9999:<JUPYTERIP>:8890 USERID@<LOGINNODE>.ncsa.illinois.edu
 
