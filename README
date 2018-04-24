@@ -1,16 +1,18 @@
 This is a Spark / pyDarshan implementation for Blue Waters
 
-Relevant Links:
-
-  -Spark Setup : 
-  https://github.com/watawafel/pydarshan/blob/master/BWDOC-SparkClustersetup-150218-1307-4152%20(1).pdf
-  
-  -Link to Download pyDarshan tool : 
-  https://xgitlab.cels.anl.gov/darshan/darshan/tree/autoperf-mod/darshan-util
- 
 Steps:
 
   1. Follow Spark Setup pdf
+    -https://github.com/watawafel/pydarshan/blob/master/BWDOC-SparkClustersetup-150218-1307-4152%20(1).pdf
+    
   2. Download pyDarshan
-  3. Submit logs.pbs
+    -https://xgitlab.cels.anl.gov/darshan/darshan/tree/autoperf-mod/darshan-util
+    
+  3. Submit logs.pbs job script
+    -https://github.com/watawafel/pydarshan/blob/master/scripts/logs.pbs
+
+
+When submitting job script - Spark will allocate two nodes from resource. One for scheduler node and one for jupyter.
+JOBID.ER / JOBID.OU will be created. "cat" files and identify ip for local jupyter compute node. 
+To run Jupyter Notebook - Port forward compute node to localhost: ssh -L 9999:<JUPYTERIP>:8890 USERID@<LOGINNODE>.ncsa.illinois.edu
 
