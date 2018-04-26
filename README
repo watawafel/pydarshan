@@ -18,3 +18,18 @@ JOBID.ER / JOBID.OU will be created. "cat" files and identify ip for local jupyt
 
 To run Jupyter Notebook - Port forward compute node to localhost: ssh -L 9999:<JUPYTERIP>:8890 USERID@<LOGINNODE>.ncsa.illinois.edu
 
+
+Lessons Learned:
+
+  1. Mounting volumes onto containers and linking library binaries. 
+  2. Port forwarding on HPC system is slightly tedious. 
+  3. Versions and dependencies, of everything, is a blast to deal with. 
+  4. Environment variables - very important. 
+  
+ 
+The conclusion of this project came to a dead end with different versions of Spark Anaconda being used within the container 
+and within bwpy (Blue Waters python) library. So, blow old image away. Start from scratch. 
+
+Solution:
+
+  Pull Spark NERSC lgerhardt image implemented on Shifter, update everything.
