@@ -27,8 +27,7 @@ Lessons Learned:
   4. Environment variables - very important. 
   
  
-The conclusion of this project came to a dead end with different versions of Spark Anaconda being used within the container 
-and within bwpy (Blue Waters python) library. So, blow old image away. Start from scratch. 
+The conclusion of this project came to a dead end with different versions of Spark Anaconda being used within the container and within bwpy (Blue Waters python) library. So, blow old image away. Start from scratch. 
 
 Solution:
 
