@@ -23,17 +23,17 @@ Lessons Learned:
 
   1. Mounting volumes onto containers and linking library binaries. 
     - Python libraries - binary linked within logs.pbs job script.
-    - Image mount -v UDI="<img> -v /ds/opt:/opt"
+    - Image mount on Shifter "-v UDI="<img> -v /ds/opt:/opt" in logs.pbs
     - Jupyter Binary load - "aprun -b -- /root/anaconda3/bin/jupyter-notebook"
     
   2. Port forwarding on HPC system is slightly tedious. 
     - Need to connect to compute node running Jupyter to open. 
     
-  3. Versions and dependencies, of everything, is a blast to deal with. 
+  3. Versions and dependencies, of everything, is fun. 
     - Python path, version and linking dependencies.
     
   4. Environment variables - very important. 
-    - Conflicting default bwpy libraries. 
+    - Conflicting default bwpy libraries from local profile. 
     - Conflicting Anaconda versions and paths. 
     - Path to Spark module "module use /mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles"
   
@@ -42,6 +42,6 @@ The conclusion of this project came to a dead end with different versions of Spa
 
 Solution:
 
-  Pull Spark NERSC lgerhardt image implemented on Shifter, update everything.
-
+  Option 1: Pull Spark NERSC lgerhardt image implemented on Shifter, update everything.
+  Option 2: Start from Scratch, create updated Spark version image.
 
