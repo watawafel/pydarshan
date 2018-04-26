@@ -22,13 +22,20 @@ To run Jupyter Notebook - Port forward compute node to localhost: ssh -L 9999:<J
 Lessons Learned:
 
   1. Mounting volumes onto containers and linking library binaries. 
-    - Python libraries
-    - Image mount
+    - Python libraries - binary linked within logs.pbs job script.
+    - Image mount -v UDI="<img> -v /ds/opt:/opt"
+    - Jupyter Binary load - "aprun -b -- /root/anaconda3/bin/jupyter-notebook"
+    
   2. Port forwarding on HPC system is slightly tedious. 
     - Need to connect to compute node running Jupyter to open. 
+    
   3. Versions and dependencies, of everything, is a blast to deal with. 
     - Python path, version and linking dependencies.
+    
   4. Environment variables - very important. 
+    - Conflicting default bwpy libraries. 
+    - Conflicting Anaconda versions and paths. 
+    - Path to Spark module "module use /mnt/a/u/eot/borcean2/apps/spark/2.1.1/modulefiles"
   
  
 The conclusion of this project came to a dead end with different versions of Spark Anaconda being used within the container and within bwpy (Blue Waters python) library. So, blow old image away. Start from scratch. 
