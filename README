@@ -22,8 +22,12 @@ To run Jupyter Notebook - Port forward compute node to localhost: ssh -L 9999:<J
 Lessons Learned:
 
   1. Mounting volumes onto containers and linking library binaries. 
+    - Python libraries
+    - Image mount
   2. Port forwarding on HPC system is slightly tedious. 
+    - Need to connect to compute node running Jupyter to open. 
   3. Versions and dependencies, of everything, is a blast to deal with. 
+    - Python path, version and linking dependencies.
   4. Environment variables - very important. 
   
  
