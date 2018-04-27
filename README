@@ -10,6 +10,9 @@ Steps:
     
   3. Submit logs.pbs job script
     -https://github.com/watawafel/pydarshan/blob/master/scripts/logs.pbs
+  
+  4. Navigate to Jupyter Notebook
+    -https://github.com/watawafel/pydarshan/blob/master/notebooks/mine.ipynb
 
 
 When submitting job script - Spark will allocate two nodes from resource. One for scheduler node and one for jupyter.
